@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+    <meta charset="UTF-8"/>
+  </head>
+  <body>
+    <script>
+      
+      /*
+      //Initialize player scores
+      let playerScore = 0;
+      let computerScore = 0;
+
+      //Function to have computer randomly select rock, paper, or scissors
+      function computerPlay() {
+        let choice = ["rock", "paper", "scissors"];
+        let computerSelection = choice[Math.floor(Math.random() * choice.length)];
+        return computerSelection;
+      }
+
+      //Function to play a five-round match
+      function game() {
+        for (let i = 0; i < 5; i++) { 
+          let playerSelection = prompt("Rock, paper, or scissors?").toLowerCase();
+          const computerSelection = computerPlay();
+         
+          function playRound(playerSelection, computerSelection) {
+            if (playerSelection === computerSelection) {
+              return "It's a tie!";
+            } else if ((playerSelection == "rock" && computerSelection == "paper")
+               || (playerSelection == "paper" && computerSelection == "scissors")
+               || (playerSelection == "scissors" && computerSelection == "rock")) {
+              computerScore++;  
+              return `You lose! ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)} beats ${playerSelection}!`;  
+            } else {
+              playerScore++;
+              return "You win!"; 
+            }      
+          }
+          console.log(`You chose: ${playerSelection}`);
+          console.log(`Computer chose: ${computerSelection}`);
+          console.log(playRound(playerSelection, computerSelection));
+          console.log(`Player: ${playerScore}`);
+          console.log(`Computer: ${computerScore}`);     
+        } 
+      }  
+      //Function to declare the best-of-five-rounds match winner
+      function declareMatchWinner() {
+        if (playerScore > computerScore) {
+          return "PLAYER WINS THE MATCH!"; 
+        } else if (playerScore < computerScore) {
+          return "COMPUTER WINS THE MATCH!";
+        } else {
+          return "THE MATCH IS TIED!";
+        }
+      }
+    
+      game(); 
+      console.log(declareMatchWinner()); 
+      */
+    </script>
+  </body>
+</html>  
