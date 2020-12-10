@@ -28,35 +28,55 @@
     const humanChoice = humanPlay();
     const computerChoice = computerPlay();
 
-    //Compare human and computer selections and increment score
-    function compareAndScore(humanPlay, computerPlay) {
+    // Function to compare humanChoice and computerChoice
+    function compareChoices(humanPlay, computerPlay) {
       if ((humanChoice == 'rock' && computerChoice == 'paper')
         || (humanChoice == 'paper' && computerChoice == 'scissors')
         || (humanChoice == 'scissors' && computerChoice == 'rock')) {
-        return computerScore++;
+          return 2;
       } else if ((humanChoice == 'paper' && computerChoice == 'rock')
         || (humanChoice == 'scissors' && computerChoice == 'paper')
         || (humanChoice == 'rock' && computerChoice == 'scissors')) {
-        return humanScore++;
+          return 1;
+      } else {
+          return 0;
       }
     }
 
-    //Declare winner of the match
+    // Assign compareChoices function to a variable
+    const choice = compareChoices(humanPlay, computerPlay);
+
+    // Function to increment score
+    function addScore(choice) {
+      if (choice == 2) {
+        return computerScore++;
+      } else if (choice == 1) {
+        return humanScore++;
+      } else {
+        return 0;
+      } 
+    } 
+
+    // Question: why does addScore() not work if I use compareChoices as a parameter and for the conditionals?  I needed to assign compareChoices to a variable to make it work.
+    // Question: why does console.log(addScore) always show 0 in the console?  I feel like it should show 0 if there's a tie, but show 1 if either the human or computer wins.
+
+    // Function to declare game winner
     function declareWinner(humanScore, computerScore) {
       if (humanScore > computerScore) {
         return `Human wins!`;
       } else if (humanScore < computerScore) {
         return `Computer wins!`;
       } else {
-        return `It's a tie!`
+        return `It's a tie!`;
       }
     }
-
+  
     console.log(`Human chose: ${humanChoice}`);
     console.log(`Computer chose: ${computerChoice}`);
-    console.log(compareAndScore(humanChoice, computerChoice));
+    console.log(compareChoices(humanChoice, computerChoice));
+    console.log(addScore(choice));
     console.log(`Human: ${humanScore}, Computer: ${computerScore}`);
-    console.log(declareWinner(humanScore, computerScore));
+    console.log(declareWinner(humanScore, computerScore)); 
     
     
   </script>
