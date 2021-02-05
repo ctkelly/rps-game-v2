@@ -55,7 +55,19 @@ function determineWinner(human, computer) {
 }
 
 //Function to add a point to the winner's score
-function incrementScore() {
+// function incrementScore() {
+//   if (winner == COMPUTER) {
+//     computerScore++;
+//     return computerScore;
+//   } else if (winner == HUMAN) {
+//     humanScore++;
+//     return humanScore;
+//   }
+// } 
+
+function incrementScore(human, computer) {
+  let winner = determineWinner(human, computer); //determineWinner is called when incrementScore is called, because declared as variable "winner"
+
   if (winner == COMPUTER) {
     computerScore++;
     return computerScore;
@@ -87,18 +99,7 @@ function playRound(event) {
   let computer = computerPlay();  
   console.log(`Computer chose: ${computer}`);
 
-  function incrementScore() {
-    let winner = determineWinner(human, computer); //determineWinner is called when incrementScore is called, because declared as variable "winner"
-
-    if (winner == COMPUTER) {
-      computerScore++;
-      return computerScore;
-    } else if (winner == HUMAN) {
-      humanScore++;
-      return humanScore;
-    }
-  } 
-  incrementScore();
+  incrementScore(human, computer);
   roundNumber++;
   showChoices.textContent = `human chose: ${human}, computer chose: ${computer}`;
   scoreboard.textContent = `round: ${roundNumber}, human: ${humanScore}, computer: ${computerScore}`;
